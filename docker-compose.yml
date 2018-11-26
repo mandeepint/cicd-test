@@ -1,0 +1,29 @@
+version: '3.5'
+services:
+
+  data:
+    build:
+      context: .
+      dockerfile: './data/Dockerfile'
+    container_name: 'production-data-service'
+    volumes:
+      - ~/.aws:/root/.aws
+
+
+  analytics:
+    build:
+      context: .
+      dockerfile: './analytics/Dockerfile'
+    container_name: 'production-analytics-service'
+    command:
+      - /bin/sh
+      - -c
+      - |
+          cd analytics
+          gunicorn --workers 2 --timeout 500 --graceful-timeout 480 --bind=0.0.0.0:9000 hug_serve:__hug_wsgi__
+    ports:
+      - "9000:9000"
+    expose:
+      - "9000"
+    volumes:
+      - ~/.aws:/root/.aws
