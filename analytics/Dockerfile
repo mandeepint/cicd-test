@@ -23,7 +23,8 @@ RUN pip3 install psycopg2 && \
     pip3 install -U pandas && \
     pip3 install hug && \
     pip3 install gunicorn && \
-    pip3 install -U textblob
+    pip3 install -U textblob && \
+    pip3 install pytest
 
 RUN python3 -m textblob.download_corpora
 
