@@ -39,13 +39,15 @@ before_install:
 #  - docker-compose build
 #  - docker-compose start
 
+
+
+before_script:
+  - docker-compose up --build -d
+
   # You will want this for logging. If one of your containers does not build for
   # whatever reason it's best to report that now before your tests start
   # otherwise it can be really tricky to debug why tests are failing sometimes.
   - docker ps
-
-before_script:
-  - docker-compose up --build
 
 script:
   - pytest
