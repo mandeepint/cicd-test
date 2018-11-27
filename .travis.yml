@@ -51,7 +51,7 @@ before_script:
   - pwd
 
 script:
-  - pytest
+  - docker-compose run analytics pytest
 
 after_script:
   - docker-compose down
