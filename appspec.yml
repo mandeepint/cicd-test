@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: .
+    destination: /artemis
+hooks:
+  BeforeInstall:
+    - location: cicd_test/scripts/stop_application.sh
+      timeout: 3600
+      runas: ec2-user
+  ApplicationStart:
+    - location: cicd_test/scripts/start_application.sh
+      timeout: 3600
+      runas: ec2-user
+  ApplicationStop:
+    - location: cicd_test/scripts/stop_application.sh
+      timeout: 3600
+      runas: ec2-user
