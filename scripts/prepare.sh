@@ -6,4 +6,4 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 newgrp docker
 sudo usermod -a -G docker ec2-user
-#chown -R ec2-user:ec2-user /artemis
+chown -R ec2-user:ec2-user /artemis
