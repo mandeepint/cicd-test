@@ -56,10 +56,6 @@ script:
 after_script:
   - docker-compose down
 
-before_deploy:
-  - wget https://github.com/mandeepint/cicd-test/archive/master.zip
-  - mkdir -p dpl_cd_upload
-  - mv master.zip dpl_cd_upload/master.zip
 
 deploy:
   - provider: s3
@@ -80,3 +76,9 @@ deploy:
     application: CICD_TEST_APP
     deployment_group: CICD_TEST_APP_DEPLOY_GRP
     on: *2
+
+before_deploy:
+  - wget https://github.com/mandeepint/cicd-test/archive/master.zip
+  - mkdir -p dpl_cd_upload
+  - zip master.zip appspec.yml
+  - mv master.zip dpl_cd_upload/master.zip
