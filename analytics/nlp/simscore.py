@@ -12,6 +12,7 @@ class SimilarityMetric():
         totally different, and 1 equal.
         The return value will be 0.0 if any of the two sequences are not instance of string
         """
+
         result = self.pre_checks(seq1, seq2)
         if result is not None:
             return result
