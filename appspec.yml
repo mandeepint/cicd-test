@@ -8,11 +8,10 @@ hooks:
     - location: cicd-test-master/scripts/prepare.sh
       timeout: 3600
       runas: ec2-user
-  ApplicationStart:
-    - location: cicd-test-master/scripts/start_application.sh
+    - location: cicd-test-master/scripts/stop_application.sh
       timeout: 3600
       runas: ec2-user
-  ApplicationStop:
-    - location: cicd-test-master/scripts/stop_application.sh
+  ApplicationStart:
+    - location: cicd-test-master/scripts/start_application.sh
       timeout: 3600
       runas: ec2-user
