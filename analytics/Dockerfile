@@ -26,6 +26,6 @@ RUN pip3 install psycopg2 && \
     pip3 install -U textblob && \
     pip3 install pytest
 
-RUN python3 -m textblob.download_corpora
+#RUN python3 -m textblob.download_corpora
 
 RUN pip3 install -U nltk
