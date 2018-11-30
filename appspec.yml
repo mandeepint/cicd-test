@@ -5,7 +5,8 @@ files:
     destination: /artemis
 hooks:
   BeforeInstall:
-    - location: cicd-test-master/scripts/stop_application.sh
+    - location: cicd-test-master/scripts/prepare.sh
+      location: cicd-test-master/scripts/stop_application.sh
       timeout: 3600
       runas: ec2-user
   ApplicationStart:
