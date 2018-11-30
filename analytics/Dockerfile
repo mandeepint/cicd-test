@@ -28,7 +28,4 @@ RUN pip3 install psycopg2 && \
 
 RUN python3 -m textblob.download_corpora
 
-RUN pip3 install -U nltk && \
-    python3 -m nltk.downloader vader_lexicon && \
-    python3 -m nltk.downloader punkt && \
-    python3 -m nltk.downloader stopwords
+RUN pip3 install -U nltk
