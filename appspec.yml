@@ -7,11 +7,11 @@ hooks:
   BeforeInstall:
     - location: cicd-test-master/scripts/prepare.sh
       timeout: 3600
-      runas: ec2-user
+      runas: root
     - location: cicd-test-master/scripts/stop_application.sh
       timeout: 3600
-      runas: ec2-user
+      runas: root
   ApplicationStart:
     - location: cicd-test-master/scripts/start_application.sh
       timeout: 3600
-      runas: ec2-user
+      runas: root
