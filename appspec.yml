@@ -4,11 +4,12 @@ files:
   - source: .
     destination: /artemis
 hooks:
-  BeforeInstall:
-    - location: cicd-test-master/scripts/prepare.sh
+  ApplicationStop:
+    - location: cicd-test-master/scripts/stop_application.sh
       timeout: 3600
       runas: root
-    - location: cicd-test-master/scripts/stop_application.sh
+  BeforeInstall:
+    - location: cicd-test-master/scripts/prepare.sh
       timeout: 3600
       runas: root
   ApplicationStart:
