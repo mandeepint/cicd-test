@@ -4,7 +4,7 @@ sys.path.insert(0, '/app/analytics/nlp')
 import pytest
 from simscore import SimilarityMetric
 
-
+#Just a comment
 @pytest.fixture
 def sm_diff_seq():
     return SimilarityMetric(['Roses are red', 'Violets are blue'])
