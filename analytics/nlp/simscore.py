@@ -7,7 +7,7 @@ from base_nlp import BaseNLP
 class SimilarityMetric(BaseNLP):
 
     def __init__(self, text):
-        """Constructor to initialize the base class"""
+        """Constructor to initialize the base class with the list of sequences"""
 
         super(SimilarityMetric, self).__init__(text)
         self.cleaned_text = self.clean_text_util(self._text)
