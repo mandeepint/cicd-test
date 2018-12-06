@@ -3,7 +3,7 @@ sys.path.insert(0,'/app/data')
 sys.path.insert(0,'/app/scripts')
 sys.path.insert(0,'/app/analytics/nlp')
 # sys.path.insert(0,'/app/utils')
-sys.path.insert(0,'/Users/mandeep-std/repos/test_CICD/analytics/nlp')
+# sys.path.insert(0,'/Users/mandeep-std/repos/test_CICD/analytics/nlp')
 # sys.path.insert(0,'/Users/mandeep-std/repos/test_CICD/analytics/nlp')
 
 
