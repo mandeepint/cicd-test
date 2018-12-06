@@ -15,6 +15,8 @@ services:
       context: .
       dockerfile: './analytics/Dockerfile'
     container_name: 'production-analytic-service'
+#    environment:
+#      - PYTHONUNBUFFERED=0
     command:
       - /bin/sh
       - -c
@@ -25,5 +27,11 @@ services:
       - "9001:9001"
     expose:
       - "9000"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
     volumes:
       - ~/.aws:/root/.aws
+      - ./analytics:/app/analytics

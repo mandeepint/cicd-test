@@ -3,7 +3,6 @@ from difflib import SequenceMatcher
 import nltk
 from base_nlp import BaseNLP
 
-
 class SimilarityMetric(BaseNLP):
 
     def __init__(self, text):
